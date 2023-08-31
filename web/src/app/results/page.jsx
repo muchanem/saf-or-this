@@ -19,7 +19,7 @@ export default function Results() {
     return(
     <div>
     { loaded ? ( 
-        <div className="flex flex-col h-screen w-1/4 py-auto mx-auto space-y-4 font-mono text-white text-sm font-bold leading-6 max-w-xs justify-center">
+        <div className="flex flex-col h-screen w-1/2 py-auto mx-auto space-y-4 font-mono text-white text-sm font-bold leading-6 justify-center">
             <div className="flex flex-col h-[50vh] overflow-y-auto">
                 {
                     results.map((thing,index) => {
