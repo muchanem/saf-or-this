@@ -7,7 +7,7 @@ export default function Results() {
     const safRef = React.useRef(null)
     const scrollToSaf = () => safRef.current.scrollIntoView();
     React.useEffect(() => {
-        fetch("http://104.236.3.179:8000/results")
+        fetch("https://api.saforthis.xyz/results")
         .then(response => {
             return response.json()
         })

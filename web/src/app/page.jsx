@@ -7,7 +7,7 @@ export default function Home() {
     const [loaded, setLoad] = React.useState("false")
 
     React.useEffect(() => {
-        fetch("http://104.236.3.179:8000/things")
+        fetch("https://api.saforthis.xyz/things")
             .then(response => {
                 return response.json()
             })
@@ -19,14 +19,14 @@ export default function Home() {
     }, []);
     const vote = (win) => {
         if (win) {
-            fetch("http://104.236.3.179:8000/vote/?" + new URLSearchParams({"thingid": currentThing["uuid"]}))
+            fetch("https://api.saforthis.xyz/vote/?" + new URLSearchParams({"thingid": currentThing["uuid"]}))
         } else {
-            fetch("http://104.236.3.179:8000/appeared/?" + new URLSearchParams({"thingid": currentThing["uuid"]}))
+            fetch("https://api.saforthis.xyz/appeared/?" + new URLSearchParams({"thingid": currentThing["uuid"]}))
         }
         setCurrent(things[1])
         setThings(things.slice(1))
         if (things.length < 3) {
-            fetch("http://104.236.3.179:8000/things")
+            fetch("https://api.saforthis.xyz/things")
             .then(response => {
                 return response.json()
             })
